@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@500;600&amp;family=Manrope:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error": "#ffffff",
+                        "on-secondary-fixed": "#410100",
+                        "surface-container": "#efecf7",
+                        "secondary-fixed-dim": "#ffb4a8",
+                        "on-primary-container": "#b7d1e9",
+                        "surface-dim": "#dbd9e3",
+                        "outline": "#73777d",
+                        "on-surface": "#1b1b22",
+                        "on-secondary-container": "#5b0200",
+                        "surface-container-low": "#f5f2fd",
+                        "background": "#fbf8ff",
+                        "tertiary-fixed": "#e5e2df",
+                        "primary-container": "#415a6f",
+                        "tertiary": "#40403e",
+                        "error-container": "#ffdad6",
+                        "secondary": "#b52517",
+                        "surface-tint": "#486176",
+                        "on-tertiary": "#ffffff",
+                        "on-surface-variant": "#43474c",
+                        "outline-variant": "#c3c7cd",
+                        "on-tertiary-fixed": "#1c1c1a",
+                        "inverse-surface": "#303038",
+                        "on-primary": "#ffffff",
+                        "primary-fixed-dim": "#afcae2",
+                        "on-primary-fixed": "#001e30",
+                        "on-primary-fixed-variant": "#30495e",
+                        "on-secondary": "#ffffff",
+                        "on-background": "#1b1b22",
+                        "surface-container-highest": "#e3e1ec",
+                        "on-error-container": "#93000a",
+                        "tertiary-container": "#585755",
+                        "surface-container-high": "#e9e7f1",
+                        "secondary-container": "#fc5843",
+                        "on-secondary-fixed-variant": "#920501",
+                        "secondary-fixed": "#ffdad4",
+                        "surface-bright": "#fbf8ff",
+                        "tertiary-fixed-dim": "#c8c6c3",
+                        "surface-container-lowest": "#ffffff",
+                        "primary": "#294357",
+                        "on-tertiary-container": "#cfcdca",
+                        "surface": "#fbf8ff",
+                        "inverse-primary": "#afcae2",
+                        "error": "#ba1a1a",
+                        "primary-fixed": "#cbe6ff",
+                        "inverse-on-surface": "#f2effa",
+                        "surface-variant": "#e3e1ec",
+                        "on-tertiary-fixed-variant": "#474745"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "stack-md": "16px",
+                        "margin": "64px",
+                        "stack-sm": "8px",
+                        "section-gap": "120px",
+                        "gutter": "32px",
+                        "container-max": "1280px",
+                        "stack-lg": "24px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["Manrope"],
+                        "headline-xl": ["Noto Serif"],
+                        "headline-md": ["Noto Serif"],
+                        "headline-lg": ["Noto Serif"],
+                        "body-md": ["Manrope"],
+                        "body-lg": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                        "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .serif-italic { font-style: italic; }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased">
+<!-- Top Navigation Bar -->
+<header class="bg-white/95 backdrop-blur-sm fixed top-0 z-50 w-full border-b border-slate-100">
+<div class="max-w-7xl mx-auto px-8 py-6 flex justify-between items-center w-full">
+<a class="text-2xl font-serif italic text-[#415A6F] tracking-tighter" href="#">Bordeaux Heritage</a>
+<nav class="hidden md:flex items-center gap-10">
+<a class="font-serif text-[15px] tracking-tight text-slate-500 hover:text-[#415A6F] transition-colors" href="#">Accommodations</a>
+<a class="font-serif text-[15px] tracking-tight text-[#415A6F] border-b border-[#415A6F] pb-1" href="#">Services</a>
+<a class="font-serif text-[15px] tracking-tight text-slate-500 hover:text-[#415A6F] transition-colors" href="#">About</a>
+<a class="font-serif text-[15px] tracking-tight text-slate-500 hover:text-[#415A6F] transition-colors" href="#">Contact</a>
+</nav>
+<div class="flex items-center gap-6">
+<a class="font-serif text-[15px] text-slate-500 hover:opacity-75 transition-opacity" href="#">Login</a>
+<button class="bg-primary-container text-on-primary-container px-8 py-3 font-serif text-[15px] hover:opacity-90 transition-all">Book Now</button>
+</div>
+</div>
+</header>
+<main class="pt-32">
+<!-- Hero Section -->
+<section class="max-w-7xl mx-auto px-8 mb-section-gap">
+<div class="max-w-3xl">
+<span class="font-label-caps text-label-caps text-primary mb-stack-md block">ART DE VIVRE</span>
+<h1 class="font-headline-xl text-headline-xl text-primary mb-stack-lg leading-tight">Des services d'exception pour une expérience bordelaise inoubliable.</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Que vous soyez un voyageur en quête de confort, un professionnel en déplacement ou un propriétaire exigeant, nous sublimons chaque aspect de votre séjour.</p>
+</div>
+</section>
+<!-- Travelers Section (Asymmetric Layout) -->
+<section class="max-w-7xl mx-auto px-8 mb-section-gap">
+<div class="grid grid-cols-12 gap-gutter items-center">
+<div class="col-span-7">
+<div class="aspect-[16/9] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover grayscale-[20%] hover:scale-105 transition-transform duration-700" data-alt="A luxurious Haussmann-style apartment interior in Bordeaux with high ceilings and ornate moldings. The room is bathed in soft morning sunlight, highlighting premium white linens on a large bed and a bouquet of fresh flowers. The overall aesthetic is one of quiet luxury, featuring a palette of cream, muted blue, and warm wood tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuWW3tnSwheLm2EGNmrIk_v649hYHFHzlygUuQ-fyr5HsXiKIsOY92K6LElCxPUdE9GKC_o2_k7T6QfGPjwWrB58iHZDKBvWFb_fArP_g9qqh_r35ab0O3v5ngHtKyA71shYiZFx-1mgeL_c8pCWTH5cGnPzoXLfXx1sc-cEzBa4qncJ33bMy1x0lE60R3OYL92eMwH-js04E6qmSpADcr3CIq1uR0DL0STsVcJM8V6QP9VJehe0TuAMfmGe8hgL-Fx38jlLO9_T0"/>
+</div>
+</div>
+<div class="col-span-5 pl-12">
+<span class="font-label-caps text-label-caps text-secondary mb-stack-md block">POUR LES VOYAGEURS</span>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-stack-lg">Le confort d'un palace, l'intimité d'un foyer.</h2>
+<ul class="space-y-8">
+<li class="flex gap-4">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="hotel_class">hotel_class</span>
+<div>
+<h4 class="font-headline-md text-body-md font-bold text-primary">Linge de Maison Premium</h4>
+<p class="text-on-surface-variant text-body-md">Draps en coton égyptien et serviettes moelleuses pour un repos absolu.</p>
+</div>
+</li>
+<li class="flex gap-4">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="concierge">concierge</span>
+<div>
+<h4 class="font-headline-md text-body-md font-bold text-primary">Conciergerie Dédiée</h4>
+<p class="text-on-surface-variant text-body-md">Réservations exclusives dans les meilleurs châteaux et tables de la région.</p>
+</div>
+</li>
+<li class="flex gap-4">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="local_cafe">local_cafe</span>
+<div>
+<h4 class="font-headline-md text-body-md font-bold text-primary">Panier de Bienvenue</h4>
+<p class="text-on-surface-variant text-body-md">Une sélection rigoureuse de produits locaux et vins de Bordeaux à votre arrivée.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- Professionals Section (Tonal Layer Container) -->
+<section class="bg-surface-container py-section-gap mb-section-gap">
+<div class="max-w-7xl mx-auto px-8">
+<div class="text-center mb-16">
+<span class="font-label-caps text-label-caps text-primary mb-stack-md block">POUR LES PROFESSIONNELS</span>
+<h2 class="font-headline-lg text-headline-lg text-primary">Productivité et Sérénité</h2>
+</div>
+<div class="grid grid-cols-3 gap-gutter">
+<div class="bg-white p-12 border border-slate-100 flex flex-col items-center text-center">
+<div class="w-16 h-16 bg-surface-container-low flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="wifi">wifi</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-4">Fibre Haute Vitesse</h3>
+<p class="text-on-surface-variant text-body-md">Une connexion stable et ultra-rapide pour toutes vos visioconférences et transferts de données.</p>
+</div>
+<div class="bg-white p-12 border border-slate-100 flex flex-col items-center text-center">
+<div class="w-16 h-16 bg-surface-container-low flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="desk">desk</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-4">Espaces de Travail</h3>
+<p class="text-on-surface-variant text-body-md">Des bureaux ergonomiques et lumineux conçus pour favoriser la concentration.</p>
+</div>
+<div class="bg-white p-12 border border-slate-100 flex flex-col items-center text-center">
+<div class="w-16 h-16 bg-surface-container-low flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="event_available">event_available</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-4">Flexibilité Totale</h3>
+<p class="text-on-surface-variant text-body-md">Check-in autonome et facturation simplifiée pour s'adapter à votre agenda professionnel.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Owners Section (Bento Grid) -->
+<section class="max-w-7xl mx-auto px-8 mb-section-gap">
+<div class="mb-12">
+<span class="font-label-caps text-label-caps text-secondary mb-stack-md block">POUR LES PROPRIÉTAIRES</span>
+<h2 class="font-headline-lg text-headline-lg text-primary">Gestion Patrimoniale de Prestige</h2>
+</div>
+<div class="grid grid-cols-12 grid-rows-2 gap-6 h-[600px]">
+<div class="col-span-8 row-span-2 relative group overflow-hidden bg-primary overflow-hidden">
+<img class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700" data-alt="An elegant, modern property management office with large glass windows overlooking a classic Bordeaux street. The interior is minimalist with dark wood accents and soft ambient lighting. Professionals in smart-casual attire are seen in a blurred background, suggesting a high-end, reliable service environment. The mood is sophisticated and secure." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5dKzcjO71HJY0_brhGebWv3EwvpO-XQRzJCn1e5uJwawhUb8npesztm4Ri55UIiQ2wHML2KVLvE5xeDGDBSYHSGVH_xhwzvhS9VgG_5T0YfZSJWsp51Iy8cegPBYlMx8tSQ9qIlthlc9IN1i2D5ajdy0_tmD252OKWRgOOWFtitNkDFleiWPkQgHQxIzRQMxMXMaVolScnoPIOmy_h26WiLBEyKbb6jPSK8rmV69S93IEvKbWyA81EG34gyyF7R2Okg0rrvh0dZs"/>
+<div class="absolute bottom-0 left-0 p-12 text-white">
+<h3 class="font-headline-lg text-headline-lg mb-4">Gestion Complète Clé en Main</h3>
+<p class="text-body-lg max-w-lg opacity-90">De la multidiffusion des annonces à la maintenance technique, nous nous occupons de tout pour maximiser vos revenus.</p>
+<button class="mt-8 border border-white px-8 py-3 text-body-md hover:bg-white hover:text-primary transition-all">En savoir plus</button>
+</div>
+</div>
+<div class="col-span-4 row-span-1 bg-surface-container flex flex-col justify-center p-8">
+<span class="material-symbols-outlined text-primary text-4xl mb-4" data-icon="payments">payments</span>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Optimisation de Revenus</h3>
+<p class="text-on-surface-variant text-body-md">Algorithmes de tarification dynamique pour garantir le meilleur taux d'occupation.</p>
+</div>
+<div class="col-span-4 row-span-1 bg-tertiary-fixed flex flex-col justify-center p-8">
+<span class="material-symbols-outlined text-primary text-4xl mb-4" data-icon="cleaning_services">cleaning_services</span>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Maintenance &amp; Ménage</h3>
+<p class="text-on-surface-variant text-body-md">Protocoles de nettoyage hôteliers et inspections régulières de votre bien.</p>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="max-w-7xl mx-auto px-8 mb-section-gap text-center py-24 border-t border-slate-100">
+<h2 class="font-headline-xl text-headline-xl text-primary mb-8">Prêt à vivre l'expérience Heritage ?</h2>
+<div class="flex justify-center gap-6">
+<button class="bg-primary text-white px-12 py-4 font-serif text-lg hover:opacity-90 transition-all">Contacter un conseiller</button>
+<button class="border border-primary text-primary px-12 py-4 font-serif text-lg hover:bg-primary hover:text-white transition-all">Voir nos biens</button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-50 border-t border-slate-200">
+<div class="max-w-7xl mx-auto px-8 py-24 flex flex-col md:flex-row justify-between items-start gap-12">
+<div class="max-w-xs">
+<a class="text-xl font-serif text-[#415A6F] mb-6 block" href="#">Bordeaux Heritage</a>
+<p class="font-serif text-sm leading-relaxed tracking-wide text-slate-600">La référence de la location saisonnière de prestige à Bordeaux. Authenticité, luxe et service sur mesure.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-16">
+<div class="flex flex-col gap-4">
+<span class="font-label-caps text-label-caps text-primary">SOCIÉTÉ</span>
+<a class="font-serif text-sm text-slate-600 hover:text-[#415A6F] transition-colors hover:underline decoration-[#415A6F] underline-offset-4" href="#">Local Guide</a>
+<a class="font-serif text-sm text-slate-600 hover:text-[#415A6F] transition-colors hover:underline decoration-[#415A6F] underline-offset-4" href="#">Sustainability</a>
+</div>
+<div class="flex flex-col gap-4">
+<span class="font-label-caps text-label-caps text-primary">LÉGAL</span>
+<a class="font-serif text-sm text-slate-600 hover:text-[#415A6F] transition-colors hover:underline decoration-[#415A6F] underline-offset-4" href="#">Privacy Policy</a>
+<a class="font-serif text-sm text-slate-600 hover:text-[#415A6F] transition-colors hover:underline decoration-[#415A6F] underline-offset-4" href="#">Terms of Service</a>
+</div>
+<div class="flex flex-col gap-4">
+<span class="font-label-caps text-label-caps text-primary">CONTACT</span>
+<span class="font-serif text-sm text-slate-600">24 Rue Esprit des Lois, 33000 Bordeaux</span>
+<span class="font-serif text-sm text-slate-600">+33 (0)5 56 00 00 00</span>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-8 py-8 border-t border-slate-200">
+<p class="font-serif text-sm text-slate-500">© 2024 Bordeaux Heritage Premium Rentals. All rights reserved.</p>
+</div>
+</footer>
+</body></html>

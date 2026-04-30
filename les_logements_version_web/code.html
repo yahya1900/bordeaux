@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@500;600&amp;family=Manrope:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error": "#ffffff",
+                        "on-secondary-fixed": "#410100",
+                        "surface-container": "#efecf7",
+                        "secondary-fixed-dim": "#ffb4a8",
+                        "on-primary-container": "#b7d1e9",
+                        "surface-dim": "#dbd9e3",
+                        "outline": "#73777d",
+                        "on-surface": "#1b1b22",
+                        "on-secondary-container": "#5b0200",
+                        "surface-container-low": "#f5f2fd",
+                        "background": "#fbf8ff",
+                        "tertiary-fixed": "#e5e2df",
+                        "primary-container": "#415a6f",
+                        "tertiary": "#40403e",
+                        "error-container": "#ffdad6",
+                        "secondary": "#b52517",
+                        "surface-tint": "#486176",
+                        "on-tertiary": "#ffffff",
+                        "on-surface-variant": "#43474c",
+                        "outline-variant": "#c3c7cd",
+                        "on-tertiary-fixed": "#1c1c1a",
+                        "inverse-surface": "#303038",
+                        "on-primary": "#ffffff",
+                        "primary-fixed-dim": "#afcae2",
+                        "on-primary-fixed": "#001e30",
+                        "on-primary-fixed-variant": "#30495e",
+                        "on-secondary": "#ffffff",
+                        "on-background": "#1b1b22",
+                        "surface-container-highest": "#e3e1ec",
+                        "on-error-container": "#93000a",
+                        "tertiary-container": "#585755",
+                        "surface-container-high": "#e9e7f1",
+                        "secondary-container": "#fc5843",
+                        "on-secondary-fixed-variant": "#920501",
+                        "secondary-fixed": "#ffdad4",
+                        "surface-bright": "#fbf8ff",
+                        "tertiary-fixed-dim": "#c8c6c3",
+                        "surface-container-lowest": "#ffffff",
+                        "primary": "#294357",
+                        "on-tertiary-container": "#cfcdca",
+                        "surface": "#fbf8ff",
+                        "inverse-primary": "#afcae2",
+                        "error": "#ba1a1a",
+                        "primary-fixed": "#cbe6ff",
+                        "inverse-on-surface": "#f2effa",
+                        "surface-variant": "#e3e1ec",
+                        "on-tertiary-fixed-variant": "#474745"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "stack-md": "16px",
+                        "margin": "64px",
+                        "stack-sm": "8px",
+                        "section-gap": "120px",
+                        "gutter": "32px",
+                        "container-max": "1280px",
+                        "stack-lg": "24px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["Manrope"],
+                        "headline-xl": ["Noto Serif"],
+                        "headline-md": ["Noto Serif"],
+                        "headline-lg": ["Noto Serif"],
+                        "body-md": ["Manrope"],
+                        "body-lg": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                        "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md antialiased">
+<!-- Top Navigation -->
+<header class="bg-white/95 backdrop-blur-sm fixed top-0 z-50 w-full border-b border-slate-100">
+<div class="max-w-7xl mx-auto px-8 py-6 flex justify-between items-center w-full">
+<a class="text-2xl font-serif italic text-[#415A6F] tracking-tighter" href="#">Bordeaux Heritage</a>
+<nav class="hidden md:flex items-center space-x-12">
+<a class="font-serif text-[15px] tracking-tight text-[#415A6F] border-b border-[#415A6F] pb-1" href="#">Accommodations</a>
+<a class="font-serif text-[15px] tracking-tight text-slate-500 hover:text-[#415A6F] transition-colors" href="#">Services</a>
+<a class="font-serif text-[15px] tracking-tight text-slate-500 hover:text-[#415A6F] transition-colors" href="#">About</a>
+<a class="font-serif text-[15px] tracking-tight text-slate-500 hover:text-[#415A6F] transition-colors" href="#">Contact</a>
+</nav>
+<div class="flex items-center space-x-6">
+<button class="font-serif text-[15px] text-slate-500 hover:text-[#415A6F] transition-colors">Login</button>
+<button class="bg-[#415A6F] text-white font-serif text-[15px] px-8 py-3 hover:opacity-90 transition-all duration-200">Book Now</button>
+</div>
+</div>
+</header>
+<main class="pt-32 pb-section-gap">
+<div class="max-w-7xl mx-auto px-8">
+<!-- Header Section -->
+<div class="mb-16">
+<span class="font-label-caps text-label-caps text-primary mb-4 block">EXCLUSIVE CURATION</span>
+<h1 class="font-headline-xl text-headline-xl text-on-surface max-w-2xl">Refined Living in the Heart of Bordeaux</h1>
+</div>
+<div class="flex gap-gutter">
+<!-- Filters Sidebar -->
+<aside class="w-72 flex-shrink-0">
+<div class="sticky top-40 space-y-12">
+<!-- Search/Dates -->
+<div>
+<h3 class="font-label-caps text-label-caps text-on-surface-variant mb-6 uppercase">Availability</h3>
+<div class="space-y-4">
+<div class="border-b border-outline-variant pb-2">
+<label class="font-label-caps text-[10px] text-outline block mb-1">CHECK IN</label>
+<input class="w-full bg-transparent border-none p-0 focus:ring-0 text-on-surface font-body-md" placeholder="Select date" type="text"/>
+</div>
+<div class="border-b border-outline-variant pb-2">
+<label class="font-label-caps text-[10px] text-outline block mb-1">CHECK OUT</label>
+<input class="w-full bg-transparent border-none p-0 focus:ring-0 text-on-surface font-body-md" placeholder="Select date" type="text"/>
+</div>
+</div>
+</div>
+<!-- Property Type -->
+<div>
+<h3 class="font-label-caps text-label-caps text-on-surface-variant mb-6 uppercase">Property Type</h3>
+<div class="space-y-3">
+<label class="flex items-center group cursor-pointer">
+<input checked="" class="w-4 h-4 border-outline-variant rounded-sm text-primary focus:ring-primary" type="checkbox"/>
+<span class="ml-3 font-body-md text-on-surface-variant group-hover:text-primary transition-colors">Haussmann Apartments</span>
+</label>
+<label class="flex items-center group cursor-pointer">
+<input class="w-4 h-4 border-outline-variant rounded-sm text-primary focus:ring-primary" type="checkbox"/>
+<span class="ml-3 font-body-md text-on-surface-variant group-hover:text-primary transition-colors">Country Estates</span>
+</label>
+<label class="flex items-center group cursor-pointer">
+<input class="w-4 h-4 border-outline-variant rounded-sm text-primary focus:ring-primary" type="checkbox"/>
+<span class="ml-3 font-body-md text-on-surface-variant group-hover:text-primary transition-colors">Contemporary Lofts</span>
+</label>
+<label class="flex items-center group cursor-pointer">
+<input class="w-4 h-4 border-outline-variant rounded-sm text-primary focus:ring-primary" type="checkbox"/>
+<span class="ml-3 font-body-md text-on-surface-variant group-hover:text-primary transition-colors">Historic Châteaux</span>
+</label>
+</div>
+</div>
+<!-- Guest Count -->
+<div>
+<h3 class="font-label-caps text-label-caps text-on-surface-variant mb-6 uppercase">Capacity</h3>
+<div class="grid grid-cols-4 gap-2">
+<button class="py-2 border border-outline-variant text-sm font-body-md hover:border-primary hover:text-primary transition-colors">1</button>
+<button class="py-2 border border-primary bg-primary text-white text-sm font-body-md">2</button>
+<button class="py-2 border border-outline-variant text-sm font-body-md hover:border-primary hover:text-primary transition-colors">3</button>
+<button class="py-2 border border-outline-variant text-sm font-body-md hover:border-primary hover:text-primary transition-colors">4+</button>
+</div>
+</div>
+<!-- Amenities -->
+<div>
+<h3 class="font-label-caps text-label-caps text-on-surface-variant mb-6 uppercase">Amenities</h3>
+<div class="space-y-3">
+<label class="flex items-center group cursor-pointer">
+<input class="w-4 h-4 border-outline-variant rounded-sm text-primary focus:ring-primary" type="checkbox"/>
+<span class="ml-3 font-body-md text-on-surface-variant group-hover:text-primary transition-colors">Wine Cellar</span>
+</label>
+<label class="flex items-center group cursor-pointer">
+<input class="w-4 h-4 border-outline-variant rounded-sm text-primary focus:ring-primary" type="checkbox"/>
+<span class="ml-3 font-body-md text-on-surface-variant group-hover:text-primary transition-colors">Concierge Service</span>
+</label>
+<label class="flex items-center group cursor-pointer">
+<input class="w-4 h-4 border-outline-variant rounded-sm text-primary focus:ring-primary" type="checkbox"/>
+<span class="ml-3 font-body-md text-on-surface-variant group-hover:text-primary transition-colors">Private Pool</span>
+</label>
+</div>
+</div>
+</div>
+</aside>
+<!-- Listings Grid -->
+<div class="flex-grow">
+<div class="grid grid-cols-2 gap-x-8 gap-y-16">
+<!-- Property Card 1 -->
+<div class="group cursor-pointer">
+<div class="aspect-[4/5] overflow-hidden mb-6 bg-surface-container relative">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A luxurious Haussmann-style apartment interior in Bordeaux with high ceilings, ornate white crown molding, and tall windows letting in bright natural light. The room is styled with minimalist modern furniture in a neutral palette of cream and soft grey, featuring a velvet sofa and a polished herringbone oak floor. The atmosphere is sophisticated and airy, capturing a high-end quiet luxury aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnAB90F9bjVVLyCo4tWZcF5Te9lYsBRqTFL9lOdOyU5Tg25EyQmvSBMcKMiyUhJn-5CR6skXBL_COrWP1j4Ydd0GwQgsZ7naRC53yjUD15Yzem1oXkB7ua3Y3sfM1zQnAOkG2ZjGJ--fYKixgseZPFaggqVIhFuvWh8db2raKK22jus_ls09rWW2-BQKc6cAgnpaUm_ijWt44ivrXD4hEaeXPcoMghwyU5ix0ALfLfWF8QfgQIKbnONCn_4w5mDjRQZPZJiJe9coI"/>
+<div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1">
+<span class="font-label-caps text-[10px] text-primary">RECOMMENDED</span>
+</div>
+</div>
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-headline-md text-on-surface">Le Palais Gallien</h3>
+<span class="font-headline-md text-headline-md text-primary">€450<span class="text-sm font-body-md text-outline">/night</span></span>
+</div>
+<p class="font-body-md text-on-surface-variant mb-4">Golden Triangle, Bordeaux Central</p>
+<div class="flex items-center gap-6 text-outline text-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">group</span>
+<span class="font-body-md">2 Guests</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">bed</span>
+<span class="font-body-md">1 Bedroom</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">square_foot</span>
+<span class="font-body-md">85 m²</span>
+</div>
+</div>
+</div>
+<!-- Property Card 2 -->
+<div class="group cursor-pointer mt-12">
+<div class="aspect-[4/5] overflow-hidden mb-6 bg-surface-container relative">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A grand stone manor house in the Bordeaux countryside surrounded by lush green vineyards under a soft golden hour sunset. The architecture features classic French shutters and a gravel driveway, radiating timeless elegance and professional hospitality. The lighting is warm and inviting, highlighting the rich textures of the limestone walls and the serene rural landscape." src="https://lh3.googleusercontent.com/aida-public/AB6AXuACAeELiOHTdNyEIWQoTVHoFbpd4kzgSWoBtqpn-Y3zh1p_OgHAxPnaZC2kp1km0a4SYEfsClLSlhgdFLlJi8B-oSVf8SnLwwNeEszFm5QvIOeMuCmy3F4XXcsjCsiEM0yclfpKbqbIyjur6vYbSynjaBzUqrKOqcqAqdJfKvSv7oJdQejGAIdMxrdW5kkd4iMmBiUnmB3qEe1-rycOQPugticTRByk_UqAW87ejXBWxZRHSUKB553GB_xmm0sG24kjZrehso36H6c"/>
+</div>
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-headline-md text-on-surface">Château Saint-Émilion</h3>
+<span class="font-headline-md text-headline-md text-primary">€1,200<span class="text-sm font-body-md text-outline">/night</span></span>
+</div>
+<p class="font-body-md text-on-surface-variant mb-4">Saint-Émilion Wine Region</p>
+<div class="flex items-center gap-6 text-outline text-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">group</span>
+<span class="font-body-md">6 Guests</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">bed</span>
+<span class="font-body-md">4 Bedrooms</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">pool</span>
+<span class="font-body-md">Private Pool</span>
+</div>
+</div>
+</div>
+<!-- Property Card 3 -->
+<div class="group cursor-pointer">
+<div class="aspect-[4/5] overflow-hidden mb-6 bg-surface-container relative">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A contemporary loft space with floor-to-ceiling industrial windows overlooking the Garonne river in Bordeaux. The interior features exposed brick walls, sleek black steel accents, and curated modern art pieces. Soft ambient evening light creates a moody yet professional atmosphere, with high-end designer lighting fixtures glowing softly against the dark architectural details." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDb4WcecHVb-ENnJiFTf1C8jqUN08SmkdaMsURD9dvYAabErqokK9UirEnmIon07K2yAas0M6tEXMbosqF03BZ2gLES08meNGjj26NTRc-LX_d6TC454G3hpadIByrmeeDZ7vK_aJ2rt_TryvS3pbqEmKSn_Aq0oRFnDrDm7v5Qzw49JeIRcpSNdFskCLOS3CZ7t54IRDl9T6OfWf5tK8BY_9etT47trNKdOfTMCrsmG3jsJQpIiKEfxPcvbpwAiI8YL-5nFTxlHmk"/>
+</div>
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-headline-md text-on-surface">The Chartrons Loft</h3>
+<span class="font-headline-md text-headline-md text-primary">€380<span class="text-sm font-body-md text-outline">/night</span></span>
+</div>
+<p class="font-body-md text-on-surface-variant mb-4">Quartier des Chartrons</p>
+<div class="flex items-center gap-6 text-outline text-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">group</span>
+<span class="font-body-md">2 Guests</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">workspace_premium</span>
+<span class="font-body-md">Workspace</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">wine_bar</span>
+<span class="font-body-md">Wine Bar</span>
+</div>
+</div>
+</div>
+<!-- Property Card 4 -->
+<div class="group cursor-pointer mt-12">
+<div class="aspect-[4/5] overflow-hidden mb-6 bg-surface-container relative">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A bright and airy studio apartment with a classic French balcony overlooking a cobblestone street in Bordeaux. The decor is a mix of vintage wooden antiques and crisp white linens, creating a warm and hospitable feeling. Soft morning sunlight streams through the open doors, highlighting the delicate architectural details of the surrounding stone buildings." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBV3_DXg47eJW5JCXAdfbuGXQ8RT_XTPjBzCFEaTIcC2ULO44eqvA-woxGSulxcyzW-TD9BxwmfuKbShvCa0aGRdtdKOw1oPZ8COBNCmVa2GYe3Hm1UW2OREmlGQJQsW0NgUVYatQZCJM95ieHaEyskkhtg6I5K6yypaf8H0t7HPmy6YGufFOZ8X_fJ_EQCose3-wOdfyGZmUHRAPqVzkw_rkOZ-q4uCAi3Wanrbgs6J2zonnJQ7QUaTSrYNA1db1E6-NM9vH1yI2Q"/>
+</div>
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-headline-md text-on-surface">L'Hôtel de Ville Studio</h3>
+<span class="font-headline-md text-headline-md text-primary">€290<span class="text-sm font-body-md text-outline">/night</span></span>
+</div>
+<p class="font-body-md text-on-surface-variant mb-4">Hôtel de Ville District</p>
+<div class="flex items-center gap-6 text-outline text-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">group</span>
+<span class="font-body-md">2 Guests</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">balcony</span>
+<span class="font-body-md">Private Balcony</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="mt-24 flex items-center justify-center gap-8">
+<button class="flex items-center gap-2 text-outline hover:text-primary transition-colors group">
+<span class="material-symbols-outlined">west</span>
+<span class="font-label-caps text-label-caps">Previous</span>
+</button>
+<div class="flex gap-4">
+<span class="font-body-md text-primary border-b border-primary">01</span>
+<span class="font-body-md text-outline">02</span>
+<span class="font-body-md text-outline">03</span>
+</div>
+<button class="flex items-center gap-2 text-outline hover:text-primary transition-colors group">
+<span class="font-label-caps text-label-caps">Next</span>
+<span class="material-symbols-outlined">east</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-50 border-t border-slate-200">
+<div class="max-w-7xl mx-auto px-8 py-24 flex flex-col md:flex-row justify-between items-start gap-12">
+<div class="max-w-xs">
+<span class="text-xl font-serif text-[#415A6F] mb-6 block">Bordeaux Heritage</span>
+<p class="font-serif text-sm leading-relaxed tracking-wide text-slate-600">
+                    Curating the finest living experiences in Bordeaux and its historic wine regions. Quiet luxury for the discerning traveler.
+                </p>
+</div>
+<div class="grid grid-cols-2 gap-16">
+<div>
+<h4 class="font-label-caps text-[10px] text-primary mb-6 uppercase">Navigation</h4>
+<ul class="space-y-4">
+<li><a class="font-serif text-sm text-slate-600 hover:text-[#415A6F] hover:underline decoration-[#415A6F] underline-offset-4 transition-colors" href="#">Local Guide</a></li>
+<li><a class="font-serif text-sm text-slate-600 hover:text-[#415A6F] hover:underline decoration-[#415A6F] underline-offset-4 transition-colors" href="#">Sustainability</a></li>
+<li><a class="font-serif text-sm text-slate-600 hover:text-[#415A6F] hover:underline decoration-[#415A6F] underline-offset-4 transition-colors" href="#">Concierge</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-caps text-[10px] text-primary mb-6 uppercase">Legal</h4>
+<ul class="space-y-4">
+<li><a class="font-serif text-sm text-slate-600 hover:text-[#415A6F] hover:underline decoration-[#415A6F] underline-offset-4 transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="font-serif text-sm text-slate-600 hover:text-[#415A6F] hover:underline decoration-[#415A6F] underline-offset-4 transition-colors" href="#">Terms of Service</a></li>
+</ul>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<h4 class="font-label-caps text-[10px] text-primary mb-6 uppercase">Newsletter</h4>
+<div class="flex border-b border-outline-variant w-64 pb-2">
+<input class="bg-transparent border-none p-0 focus:ring-0 text-sm font-serif flex-grow" placeholder="Your email address" type="email"/>
+<button class="material-symbols-outlined text-primary">arrow_forward</button>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-8 py-8 border-t border-slate-200/50">
+<p class="font-serif text-sm text-slate-500">© 2024 Bordeaux Heritage Premium Rentals. All rights reserved.</p>
+</div>
+</footer>
+</body></html>
