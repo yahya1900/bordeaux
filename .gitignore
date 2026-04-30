@@ -1,0 +1,13 @@
+node_modules/
+dist/
+.vite/
+*.log
+vite-dev.err
+
+# Legacy Stitch exports kept locally for reference.
+accueil_bordeaux_prestige/
+bordeaux_heritage_living/
+contact_bordeaux_prestige/
+les_logements_bordeaux_prestige/
+nos_services_bordeaux_prestige/
+propos_bordeaux_prestige/
