@@ -81,6 +81,36 @@ img {
   clip-path: inset(8% 8% 8% 8%);
 }
 
+.route-page {
+  will-change: transform, opacity;
+}
+
+.motion-card {
+  will-change: transform;
+}
+
+.motion-card img {
+  will-change: transform;
+}
+
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+details summary {
+  list-style: none;
+}
+
+details summary::after {
+  content: '+';
+  float: right;
+  color: #294357;
+}
+
+details[open] summary::after {
+  content: '-';
+}
+
 .no-scrollbar {
   scrollbar-width: none;
 }
