@@ -805,16 +805,11 @@
         style.id = "bordeaux-i18n-styles";
         style.textContent = `
             .language-switcher {
-                position: fixed;
-                right: 20px;
-                bottom: 20px;
-                z-index: 100;
                 display: flex !important;
                 align-items: center;
                 gap: 4px;
                 border: 1px solid #c3c7cd;
                 background: rgba(255, 255, 255, 0.96);
-                box-shadow: 0 12px 32px rgba(41, 67, 87, 0.18);
                 padding: 4px;
                 backdrop-filter: blur(12px);
             }
@@ -833,12 +828,6 @@
             .lang-button[aria-pressed="true"] {
                 background-color: #294357;
                 color: #ffffff;
-            }
-            @media (max-width: 640px) {
-                .language-switcher {
-                    right: 12px;
-                    bottom: 12px;
-                }
             }
         `;
         document.head.appendChild(style);
