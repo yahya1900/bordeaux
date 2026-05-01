@@ -117,8 +117,18 @@
             transform: translate3d(0, 0, 0);
         }
         .language-switcher {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            z-index: 100;
+            display: flex !important;
+            align-items: center;
+            gap: 4px;
             border: 1px solid #c3c7cd;
-            padding: 3px;
+            background: rgba(255, 255, 255, 0.96);
+            box-shadow: 0 12px 32px rgba(41, 67, 87, 0.18);
+            padding: 4px;
+            backdrop-filter: blur(12px);
         }
         .lang-button {
             min-width: 34px;
@@ -135,6 +145,12 @@
         .lang-button[aria-pressed="true"] {
             background-color: #294357;
             color: #ffffff;
+        }
+        @media (max-width: 640px) {
+            .language-switcher {
+                right: 12px;
+                bottom: 12px;
+            }
         }
         @media (prefers-reduced-motion: reduce) {
             html { scroll-behavior: auto; }
@@ -160,7 +176,7 @@
 </nav>
 <div class="flex items-center gap-6">
 <a class="font-serif text-[15px] text-slate-500 hover:opacity-75 transition-opacity" data-i18n="nav.login" href="#">Connexion</a>
-<div aria-label="Language selector" class="language-switcher hidden sm:flex items-center gap-1">
+<div aria-label="Language selector" class="language-switcher items-center gap-1">
 <button aria-pressed="true" class="lang-button" data-lang="fr" type="button">FR</button>
 <button aria-pressed="false" class="lang-button" data-lang="en" type="button">EN</button>
 <button aria-pressed="false" class="lang-button" data-lang="es" type="button">ES</button>
