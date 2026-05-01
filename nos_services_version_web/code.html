@@ -3,6 +3,7 @@
 <html class="light" lang="fr"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Bordeaux Heritage | Services</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@500;600&amp;family=Manrope:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -101,6 +102,48 @@
             font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
         }
         .serif-italic { font-style: italic; }
+        html { scroll-behavior: smooth; }
+        .scroll-animate {
+            opacity: 0;
+            transform: translate3d(0, var(--scroll-offset, 42px), 0);
+            transition: opacity 700ms ease, transform 900ms cubic-bezier(0.22, 1, 0.36, 1);
+            will-change: opacity, transform;
+        }
+        .scroll-animate[data-scroll-direction="up"] {
+            --scroll-offset: -42px;
+        }
+        .scroll-animate.is-visible {
+            opacity: 1;
+            transform: translate3d(0, 0, 0);
+        }
+        .language-switcher {
+            border: 1px solid #c3c7cd;
+            padding: 3px;
+        }
+        .lang-button {
+            min-width: 34px;
+            padding: 7px 8px;
+            color: #43474c;
+            font-family: Manrope, sans-serif;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            line-height: 1;
+            transition: background-color 180ms ease, color 180ms ease;
+        }
+        .lang-button:hover,
+        .lang-button[aria-pressed="true"] {
+            background-color: #294357;
+            color: #ffffff;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            .scroll-animate {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+        }
     </style>
 </head>
 <body class="bg-background text-on-background font-body-md antialiased">
@@ -110,14 +153,19 @@
 <div class="max-w-7xl mx-auto px-8 py-6 flex justify-between items-center w-full">
 <a class="text-2xl font-serif italic text-[#415A6F] tracking-tighter" href="#">Bordeaux Heritage</a>
 <nav class="hidden md:flex items-center gap-10">
-<a class="font-serif text-[15px] tracking-tight text-slate-500 hover:text-[#415A6F] transition-colors" href="#">Accommodations</a>
-<a class="font-serif text-[15px] tracking-tight text-[#415A6F] border-b border-[#415A6F] pb-1" href="#">Services</a>
-<a class="font-serif text-[15px] tracking-tight text-slate-500 hover:text-[#415A6F] transition-colors" href="#">About</a>
-<a class="font-serif text-[15px] tracking-tight text-slate-500 hover:text-[#415A6F] transition-colors" href="#">Contact</a>
+<a class="font-serif text-[15px] tracking-tight text-slate-500 hover:text-[#415A6F] transition-colors" data-i18n="nav.accommodations" href="#">Logements</a>
+<a class="font-serif text-[15px] tracking-tight text-[#415A6F] border-b border-[#415A6F] pb-1" data-i18n="nav.services" href="#">Services</a>
+<a class="font-serif text-[15px] tracking-tight text-slate-500 hover:text-[#415A6F] transition-colors" data-i18n="nav.about" href="#">À propos</a>
+<a class="font-serif text-[15px] tracking-tight text-slate-500 hover:text-[#415A6F] transition-colors" data-i18n="nav.contact" href="#">Contact</a>
 </nav>
 <div class="flex items-center gap-6">
-<a class="font-serif text-[15px] text-slate-500 hover:opacity-75 transition-opacity" href="#">Login</a>
-<button class="bg-primary-container text-on-primary-container px-8 py-3 font-serif text-[15px] hover:opacity-90 transition-all">Book Now</button>
+<a class="font-serif text-[15px] text-slate-500 hover:opacity-75 transition-opacity" data-i18n="nav.login" href="#">Connexion</a>
+<div aria-label="Language selector" class="language-switcher hidden sm:flex items-center gap-1">
+<button aria-pressed="true" class="lang-button" data-lang="fr" type="button">FR</button>
+<button aria-pressed="false" class="lang-button" data-lang="en" type="button">EN</button>
+<button aria-pressed="false" class="lang-button" data-lang="es" type="button">ES</button>
+</div>
+<button class="bg-primary-container text-on-primary-container px-8 py-3 font-serif text-[15px] hover:opacity-90 transition-all" data-i18n="nav.book">Réserver</button>
 </div>
 </div>
 </header>
@@ -125,9 +173,9 @@
 <!-- Hero Section -->
 <section class="max-w-7xl mx-auto px-8 mb-section-gap">
 <div class="max-w-3xl">
-<span class="font-label-caps text-label-caps text-primary mb-stack-md block">ART DE VIVRE</span>
-<h1 class="font-headline-xl text-headline-xl text-primary mb-stack-lg leading-tight">Des services d'exception pour une expérience bordelaise inoubliable.</h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Que vous soyez un voyageur en quête de confort, un professionnel en déplacement ou un propriétaire exigeant, nous sublimons chaque aspect de votre séjour.</p>
+<span class="font-label-caps text-label-caps text-primary mb-stack-md block" data-i18n="hero.eyebrow">ART DE VIVRE</span>
+<h1 class="font-headline-xl text-headline-xl text-primary mb-stack-lg leading-tight" data-i18n="hero.title">Des services d'exception pour une expérience bordelaise inoubliable.</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl" data-i18n="hero.copy">Que vous soyez un voyageur en quête de confort, un professionnel en déplacement ou un propriétaire exigeant, nous sublimons chaque aspect de votre séjour.</p>
 </div>
 </section>
 <!-- Travelers Section (Asymmetric Layout) -->
@@ -139,28 +187,28 @@
 </div>
 </div>
 <div class="col-span-5 pl-12">
-<span class="font-label-caps text-label-caps text-secondary mb-stack-md block">POUR LES VOYAGEURS</span>
-<h2 class="font-headline-lg text-headline-lg text-primary mb-stack-lg">Le confort d'un palace, l'intimité d'un foyer.</h2>
+<span class="font-label-caps text-label-caps text-secondary mb-stack-md block" data-i18n="travelers.eyebrow">POUR LES VOYAGEURS</span>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-stack-lg" data-i18n="travelers.title">Le confort d'un palace, l'intimité d'un foyer.</h2>
 <ul class="space-y-8">
 <li class="flex gap-4">
 <span class="material-symbols-outlined text-primary text-3xl" data-icon="hotel_class">hotel_class</span>
 <div>
-<h4 class="font-headline-md text-body-md font-bold text-primary">Linge de Maison Premium</h4>
-<p class="text-on-surface-variant text-body-md">Draps en coton égyptien et serviettes moelleuses pour un repos absolu.</p>
+<h4 class="font-headline-md text-body-md font-bold text-primary" data-i18n="travelers.linen.title">Linge de Maison Premium</h4>
+<p class="text-on-surface-variant text-body-md" data-i18n="travelers.linen.copy">Draps en coton égyptien et serviettes moelleuses pour un repos absolu.</p>
 </div>
 </li>
 <li class="flex gap-4">
 <span class="material-symbols-outlined text-primary text-3xl" data-icon="concierge">concierge</span>
 <div>
-<h4 class="font-headline-md text-body-md font-bold text-primary">Conciergerie Dédiée</h4>
-<p class="text-on-surface-variant text-body-md">Réservations exclusives dans les meilleurs châteaux et tables de la région.</p>
+<h4 class="font-headline-md text-body-md font-bold text-primary" data-i18n="travelers.concierge.title">Conciergerie Dédiée</h4>
+<p class="text-on-surface-variant text-body-md" data-i18n="travelers.concierge.copy">Réservations exclusives dans les meilleurs châteaux et tables de la région.</p>
 </div>
 </li>
 <li class="flex gap-4">
 <span class="material-symbols-outlined text-primary text-3xl" data-icon="local_cafe">local_cafe</span>
 <div>
-<h4 class="font-headline-md text-body-md font-bold text-primary">Panier de Bienvenue</h4>
-<p class="text-on-surface-variant text-body-md">Une sélection rigoureuse de produits locaux et vins de Bordeaux à votre arrivée.</p>
+<h4 class="font-headline-md text-body-md font-bold text-primary" data-i18n="travelers.welcome.title">Panier de Bienvenue</h4>
+<p class="text-on-surface-variant text-body-md" data-i18n="travelers.welcome.copy">Une sélection rigoureuse de produits locaux et vins de Bordeaux à votre arrivée.</p>
 </div>
 </li>
 </ul>
@@ -171,30 +219,30 @@
 <section class="bg-surface-container py-section-gap mb-section-gap">
 <div class="max-w-7xl mx-auto px-8">
 <div class="text-center mb-16">
-<span class="font-label-caps text-label-caps text-primary mb-stack-md block">POUR LES PROFESSIONNELS</span>
-<h2 class="font-headline-lg text-headline-lg text-primary">Productivité et Sérénité</h2>
+<span class="font-label-caps text-label-caps text-primary mb-stack-md block" data-i18n="professionals.eyebrow">POUR LES PROFESSIONNELS</span>
+<h2 class="font-headline-lg text-headline-lg text-primary" data-i18n="professionals.title">Productivité et Sérénité</h2>
 </div>
 <div class="grid grid-cols-3 gap-gutter">
 <div class="bg-white p-12 border border-slate-100 flex flex-col items-center text-center">
 <div class="w-16 h-16 bg-surface-container-low flex items-center justify-center mb-6">
 <span class="material-symbols-outlined text-primary text-4xl" data-icon="wifi">wifi</span>
 </div>
-<h3 class="font-headline-md text-headline-md text-primary mb-4">Fibre Haute Vitesse</h3>
-<p class="text-on-surface-variant text-body-md">Une connexion stable et ultra-rapide pour toutes vos visioconférences et transferts de données.</p>
+<h3 class="font-headline-md text-headline-md text-primary mb-4" data-i18n="professionals.wifi.title">Fibre Haute Vitesse</h3>
+<p class="text-on-surface-variant text-body-md" data-i18n="professionals.wifi.copy">Une connexion stable et ultra-rapide pour toutes vos visioconférences et transferts de données.</p>
 </div>
 <div class="bg-white p-12 border border-slate-100 flex flex-col items-center text-center">
 <div class="w-16 h-16 bg-surface-container-low flex items-center justify-center mb-6">
 <span class="material-symbols-outlined text-primary text-4xl" data-icon="desk">desk</span>
 </div>
-<h3 class="font-headline-md text-headline-md text-primary mb-4">Espaces de Travail</h3>
-<p class="text-on-surface-variant text-body-md">Des bureaux ergonomiques et lumineux conçus pour favoriser la concentration.</p>
+<h3 class="font-headline-md text-headline-md text-primary mb-4" data-i18n="professionals.workspace.title">Espaces de Travail</h3>
+<p class="text-on-surface-variant text-body-md" data-i18n="professionals.workspace.copy">Des bureaux ergonomiques et lumineux conçus pour favoriser la concentration.</p>
 </div>
 <div class="bg-white p-12 border border-slate-100 flex flex-col items-center text-center">
 <div class="w-16 h-16 bg-surface-container-low flex items-center justify-center mb-6">
 <span class="material-symbols-outlined text-primary text-4xl" data-icon="event_available">event_available</span>
 </div>
-<h3 class="font-headline-md text-headline-md text-primary mb-4">Flexibilité Totale</h3>
-<p class="text-on-surface-variant text-body-md">Check-in autonome et facturation simplifiée pour s'adapter à votre agenda professionnel.</p>
+<h3 class="font-headline-md text-headline-md text-primary mb-4" data-i18n="professionals.flexibility.title">Flexibilité Totale</h3>
+<p class="text-on-surface-variant text-body-md" data-i18n="professionals.flexibility.copy">Check-in autonome et facturation simplifiée pour s'adapter à votre agenda professionnel.</p>
 </div>
 </div>
 </div>
@@ -202,36 +250,36 @@
 <!-- Owners Section (Bento Grid) -->
 <section class="max-w-7xl mx-auto px-8 mb-section-gap">
 <div class="mb-12">
-<span class="font-label-caps text-label-caps text-secondary mb-stack-md block">POUR LES PROPRIÉTAIRES</span>
-<h2 class="font-headline-lg text-headline-lg text-primary">Gestion Patrimoniale de Prestige</h2>
+<span class="font-label-caps text-label-caps text-secondary mb-stack-md block" data-i18n="owners.eyebrow">POUR LES PROPRIÉTAIRES</span>
+<h2 class="font-headline-lg text-headline-lg text-primary" data-i18n="owners.title">Gestion Patrimoniale de Prestige</h2>
 </div>
 <div class="grid grid-cols-12 grid-rows-2 gap-6 h-[600px]">
 <div class="col-span-8 row-span-2 relative group overflow-hidden bg-primary overflow-hidden">
 <img class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700" data-alt="An elegant, modern property management office with large glass windows overlooking a classic Bordeaux street. The interior is minimalist with dark wood accents and soft ambient lighting. Professionals in smart-casual attire are seen in a blurred background, suggesting a high-end, reliable service environment. The mood is sophisticated and secure." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5dKzcjO71HJY0_brhGebWv3EwvpO-XQRzJCn1e5uJwawhUb8npesztm4Ri55UIiQ2wHML2KVLvE5xeDGDBSYHSGVH_xhwzvhS9VgG_5T0YfZSJWsp51Iy8cegPBYlMx8tSQ9qIlthlc9IN1i2D5ajdy0_tmD252OKWRgOOWFtitNkDFleiWPkQgHQxIzRQMxMXMaVolScnoPIOmy_h26WiLBEyKbb6jPSK8rmV69S93IEvKbWyA81EG34gyyF7R2Okg0rrvh0dZs"/>
 <div class="absolute bottom-0 left-0 p-12 text-white">
-<h3 class="font-headline-lg text-headline-lg mb-4">Gestion Complète Clé en Main</h3>
-<p class="text-body-lg max-w-lg opacity-90">De la multidiffusion des annonces à la maintenance technique, nous nous occupons de tout pour maximiser vos revenus.</p>
-<button class="mt-8 border border-white px-8 py-3 text-body-md hover:bg-white hover:text-primary transition-all">En savoir plus</button>
+<h3 class="font-headline-lg text-headline-lg mb-4" data-i18n="owners.full.title">Gestion Complète Clé en Main</h3>
+<p class="text-body-lg max-w-lg opacity-90" data-i18n="owners.full.copy">De la multidiffusion des annonces à la maintenance technique, nous nous occupons de tout pour maximiser vos revenus.</p>
+<button class="mt-8 border border-white px-8 py-3 text-body-md hover:bg-white hover:text-primary transition-all" data-i18n="owners.full.button">En savoir plus</button>
 </div>
 </div>
 <div class="col-span-4 row-span-1 bg-surface-container flex flex-col justify-center p-8">
 <span class="material-symbols-outlined text-primary text-4xl mb-4" data-icon="payments">payments</span>
-<h3 class="font-headline-md text-headline-md text-primary mb-2">Optimisation de Revenus</h3>
-<p class="text-on-surface-variant text-body-md">Algorithmes de tarification dynamique pour garantir le meilleur taux d'occupation.</p>
+<h3 class="font-headline-md text-headline-md text-primary mb-2" data-i18n="owners.revenue.title">Optimisation de Revenus</h3>
+<p class="text-on-surface-variant text-body-md" data-i18n="owners.revenue.copy">Algorithmes de tarification dynamique pour garantir le meilleur taux d'occupation.</p>
 </div>
 <div class="col-span-4 row-span-1 bg-tertiary-fixed flex flex-col justify-center p-8">
 <span class="material-symbols-outlined text-primary text-4xl mb-4" data-icon="cleaning_services">cleaning_services</span>
-<h3 class="font-headline-md text-headline-md text-primary mb-2">Maintenance &amp; Ménage</h3>
-<p class="text-on-surface-variant text-body-md">Protocoles de nettoyage hôteliers et inspections régulières de votre bien.</p>
+<h3 class="font-headline-md text-headline-md text-primary mb-2" data-i18n="owners.maintenance.title">Maintenance &amp; Ménage</h3>
+<p class="text-on-surface-variant text-body-md" data-i18n="owners.maintenance.copy">Protocoles de nettoyage hôteliers et inspections régulières de votre bien.</p>
 </div>
 </div>
 </section>
 <!-- CTA Section -->
 <section class="max-w-7xl mx-auto px-8 mb-section-gap text-center py-24 border-t border-slate-100">
-<h2 class="font-headline-xl text-headline-xl text-primary mb-8">Prêt à vivre l'expérience Heritage ?</h2>
+<h2 class="font-headline-xl text-headline-xl text-primary mb-8" data-i18n="cta.title">Prêt à vivre l'expérience Heritage ?</h2>
 <div class="flex justify-center gap-6">
-<button class="bg-primary text-white px-12 py-4 font-serif text-lg hover:opacity-90 transition-all">Contacter un conseiller</button>
-<button class="border border-primary text-primary px-12 py-4 font-serif text-lg hover:bg-primary hover:text-white transition-all">Voir nos biens</button>
+<button class="bg-primary text-white px-12 py-4 font-serif text-lg hover:opacity-90 transition-all" data-i18n="cta.contact">Contacter un conseiller</button>
+<button class="border border-primary text-primary px-12 py-4 font-serif text-lg hover:bg-primary hover:text-white transition-all" data-i18n="cta.properties">Voir nos biens</button>
 </div>
 </section>
 </main>
@@ -240,18 +288,18 @@
 <div class="max-w-7xl mx-auto px-8 py-24 flex flex-col md:flex-row justify-between items-start gap-12">
 <div class="max-w-xs">
 <a class="text-xl font-serif text-[#415A6F] mb-6 block" href="#">Bordeaux Heritage</a>
-<p class="font-serif text-sm leading-relaxed tracking-wide text-slate-600">La référence de la location saisonnière de prestige à Bordeaux. Authenticité, luxe et service sur mesure.</p>
+<p class="font-serif text-sm leading-relaxed tracking-wide text-slate-600" data-i18n="footer.description">La référence de la location saisonnière de prestige à Bordeaux. Authenticité, luxe et service sur mesure.</p>
 </div>
 <div class="grid grid-cols-2 md:grid-cols-3 gap-16">
 <div class="flex flex-col gap-4">
-<span class="font-label-caps text-label-caps text-primary">SOCIÉTÉ</span>
-<a class="font-serif text-sm text-slate-600 hover:text-[#415A6F] transition-colors hover:underline decoration-[#415A6F] underline-offset-4" href="#">Local Guide</a>
-<a class="font-serif text-sm text-slate-600 hover:text-[#415A6F] transition-colors hover:underline decoration-[#415A6F] underline-offset-4" href="#">Sustainability</a>
+<span class="font-label-caps text-label-caps text-primary" data-i18n="footer.company">SOCIÉTÉ</span>
+<a class="font-serif text-sm text-slate-600 hover:text-[#415A6F] transition-colors hover:underline decoration-[#415A6F] underline-offset-4" data-i18n="footer.localGuide" href="#">Guide local</a>
+<a class="font-serif text-sm text-slate-600 hover:text-[#415A6F] transition-colors hover:underline decoration-[#415A6F] underline-offset-4" data-i18n="footer.sustainability" href="#">Durabilité</a>
 </div>
 <div class="flex flex-col gap-4">
-<span class="font-label-caps text-label-caps text-primary">LÉGAL</span>
-<a class="font-serif text-sm text-slate-600 hover:text-[#415A6F] transition-colors hover:underline decoration-[#415A6F] underline-offset-4" href="#">Privacy Policy</a>
-<a class="font-serif text-sm text-slate-600 hover:text-[#415A6F] transition-colors hover:underline decoration-[#415A6F] underline-offset-4" href="#">Terms of Service</a>
+<span class="font-label-caps text-label-caps text-primary" data-i18n="footer.legal">LÉGAL</span>
+<a class="font-serif text-sm text-slate-600 hover:text-[#415A6F] transition-colors hover:underline decoration-[#415A6F] underline-offset-4" data-i18n="footer.privacy" href="#">Politique de confidentialité</a>
+<a class="font-serif text-sm text-slate-600 hover:text-[#415A6F] transition-colors hover:underline decoration-[#415A6F] underline-offset-4" data-i18n="footer.terms" href="#">Conditions d'utilisation</a>
 </div>
 <div class="flex flex-col gap-4">
 <span class="font-label-caps text-label-caps text-primary">CONTACT</span>
@@ -261,7 +309,253 @@
 </div>
 </div>
 <div class="max-w-7xl mx-auto px-8 py-8 border-t border-slate-200">
-<p class="font-serif text-sm text-slate-500">© 2024 Bordeaux Heritage Premium Rentals. All rights reserved.</p>
+<p class="font-serif text-sm text-slate-500" data-i18n="footer.copyright">© 2024 Bordeaux Heritage Premium Rentals. Tous droits réservés.</p>
 </div>
 </footer>
+<script>
+    (() => {
+        const translations = {
+            fr: {
+                "meta.title": "Bordeaux Heritage | Services",
+                "nav.accommodations": "Logements",
+                "nav.services": "Services",
+                "nav.about": "À propos",
+                "nav.contact": "Contact",
+                "nav.login": "Connexion",
+                "nav.book": "Réserver",
+                "hero.eyebrow": "ART DE VIVRE",
+                "hero.title": "Des services d'exception pour une expérience bordelaise inoubliable.",
+                "hero.copy": "Que vous soyez un voyageur en quête de confort, un professionnel en déplacement ou un propriétaire exigeant, nous sublimons chaque aspect de votre séjour.",
+                "travelers.eyebrow": "POUR LES VOYAGEURS",
+                "travelers.title": "Le confort d'un palace, l'intimité d'un foyer.",
+                "travelers.linen.title": "Linge de Maison Premium",
+                "travelers.linen.copy": "Draps en coton égyptien et serviettes moelleuses pour un repos absolu.",
+                "travelers.concierge.title": "Conciergerie Dédiée",
+                "travelers.concierge.copy": "Réservations exclusives dans les meilleurs châteaux et tables de la région.",
+                "travelers.welcome.title": "Panier de Bienvenue",
+                "travelers.welcome.copy": "Une sélection rigoureuse de produits locaux et vins de Bordeaux à votre arrivée.",
+                "professionals.eyebrow": "POUR LES PROFESSIONNELS",
+                "professionals.title": "Productivité et Sérénité",
+                "professionals.wifi.title": "Fibre Haute Vitesse",
+                "professionals.wifi.copy": "Une connexion stable et ultra-rapide pour toutes vos visioconférences et transferts de données.",
+                "professionals.workspace.title": "Espaces de Travail",
+                "professionals.workspace.copy": "Des bureaux ergonomiques et lumineux conçus pour favoriser la concentration.",
+                "professionals.flexibility.title": "Flexibilité Totale",
+                "professionals.flexibility.copy": "Check-in autonome et facturation simplifiée pour s'adapter à votre agenda professionnel.",
+                "owners.eyebrow": "POUR LES PROPRIÉTAIRES",
+                "owners.title": "Gestion Patrimoniale de Prestige",
+                "owners.full.title": "Gestion Complète Clé en Main",
+                "owners.full.copy": "De la multidiffusion des annonces à la maintenance technique, nous nous occupons de tout pour maximiser vos revenus.",
+                "owners.full.button": "En savoir plus",
+                "owners.revenue.title": "Optimisation de Revenus",
+                "owners.revenue.copy": "Algorithmes de tarification dynamique pour garantir le meilleur taux d'occupation.",
+                "owners.maintenance.title": "Maintenance & Ménage",
+                "owners.maintenance.copy": "Protocoles de nettoyage hôteliers et inspections régulières de votre bien.",
+                "cta.title": "Prêt à vivre l'expérience Heritage ?",
+                "cta.contact": "Contacter un conseiller",
+                "cta.properties": "Voir nos biens",
+                "footer.description": "La référence de la location saisonnière de prestige à Bordeaux. Authenticité, luxe et service sur mesure.",
+                "footer.company": "SOCIÉTÉ",
+                "footer.localGuide": "Guide local",
+                "footer.sustainability": "Durabilité",
+                "footer.legal": "LÉGAL",
+                "footer.privacy": "Politique de confidentialité",
+                "footer.terms": "Conditions d'utilisation",
+                "footer.copyright": "© 2024 Bordeaux Heritage Premium Rentals. Tous droits réservés."
+            },
+            en: {
+                "meta.title": "Bordeaux Heritage | Services",
+                "nav.accommodations": "Accommodations",
+                "nav.services": "Services",
+                "nav.about": "About",
+                "nav.contact": "Contact",
+                "nav.login": "Login",
+                "nav.book": "Book Now",
+                "hero.eyebrow": "ART OF LIVING",
+                "hero.title": "Exceptional services for an unforgettable Bordeaux experience.",
+                "hero.copy": "Whether you are a traveler seeking comfort, a professional on business, or a discerning owner, we elevate every part of your stay.",
+                "travelers.eyebrow": "FOR TRAVELERS",
+                "travelers.title": "The comfort of a palace, the intimacy of a home.",
+                "travelers.linen.title": "Premium Household Linen",
+                "travelers.linen.copy": "Egyptian cotton sheets and plush towels for absolute rest.",
+                "travelers.concierge.title": "Dedicated Concierge",
+                "travelers.concierge.copy": "Exclusive reservations at the region's finest chateaux and restaurants.",
+                "travelers.welcome.title": "Welcome Basket",
+                "travelers.welcome.copy": "A carefully curated selection of local products and Bordeaux wines on arrival.",
+                "professionals.eyebrow": "FOR PROFESSIONALS",
+                "professionals.title": "Productivity and Peace of Mind",
+                "professionals.wifi.title": "High-Speed Fiber",
+                "professionals.wifi.copy": "A stable, ultra-fast connection for all your video calls and data transfers.",
+                "professionals.workspace.title": "Workspaces",
+                "professionals.workspace.copy": "Ergonomic, light-filled desks designed to support focus.",
+                "professionals.flexibility.title": "Total Flexibility",
+                "professionals.flexibility.copy": "Self check-in and simplified invoicing to fit your professional schedule.",
+                "owners.eyebrow": "FOR OWNERS",
+                "owners.title": "Prestige Property Management",
+                "owners.full.title": "Complete Turnkey Management",
+                "owners.full.copy": "From multi-platform listing distribution to technical maintenance, we handle everything to maximize your revenue.",
+                "owners.full.button": "Learn more",
+                "owners.revenue.title": "Revenue Optimization",
+                "owners.revenue.copy": "Dynamic pricing algorithms to secure the best occupancy rate.",
+                "owners.maintenance.title": "Maintenance & Housekeeping",
+                "owners.maintenance.copy": "Hotel-standard cleaning protocols and regular inspections of your property.",
+                "cta.title": "Ready to experience Heritage?",
+                "cta.contact": "Contact an advisor",
+                "cta.properties": "View our properties",
+                "footer.description": "The benchmark for premium short-term rentals in Bordeaux. Authenticity, luxury and tailored service.",
+                "footer.company": "COMPANY",
+                "footer.localGuide": "Local Guide",
+                "footer.sustainability": "Sustainability",
+                "footer.legal": "LEGAL",
+                "footer.privacy": "Privacy Policy",
+                "footer.terms": "Terms of Service",
+                "footer.copyright": "© 2024 Bordeaux Heritage Premium Rentals. All rights reserved."
+            },
+            es: {
+                "meta.title": "Bordeaux Heritage | Servicios",
+                "nav.accommodations": "Alojamientos",
+                "nav.services": "Servicios",
+                "nav.about": "Nosotros",
+                "nav.contact": "Contacto",
+                "nav.login": "Iniciar sesión",
+                "nav.book": "Reservar",
+                "hero.eyebrow": "ARTE DE VIVIR",
+                "hero.title": "Servicios excepcionales para una experiencia bordelesa inolvidable.",
+                "hero.copy": "Ya sea viajero en busca de comodidad, profesional en desplazamiento o propietario exigente, elevamos cada aspecto de su estancia.",
+                "travelers.eyebrow": "PARA VIAJEROS",
+                "travelers.title": "La comodidad de un palacio, la intimidad de un hogar.",
+                "travelers.linen.title": "Textiles de hogar premium",
+                "travelers.linen.copy": "Sábanas de algodón egipcio y toallas mullidas para un descanso absoluto.",
+                "travelers.concierge.title": "Conserjería dedicada",
+                "travelers.concierge.copy": "Reservas exclusivas en los mejores châteaux y restaurantes de la región.",
+                "travelers.welcome.title": "Cesta de bienvenida",
+                "travelers.welcome.copy": "Una cuidada selección de productos locales y vinos de Burdeos a su llegada.",
+                "professionals.eyebrow": "PARA PROFESIONALES",
+                "professionals.title": "Productividad y serenidad",
+                "professionals.wifi.title": "Fibra de alta velocidad",
+                "professionals.wifi.copy": "Una conexión estable y ultrarrápida para todas sus videoconferencias y transferencias de datos.",
+                "professionals.workspace.title": "Espacios de trabajo",
+                "professionals.workspace.copy": "Escritorios ergonómicos y luminosos diseñados para favorecer la concentración.",
+                "professionals.flexibility.title": "Flexibilidad total",
+                "professionals.flexibility.copy": "Check-in autónomo y facturación simplificada para adaptarse a su agenda profesional.",
+                "owners.eyebrow": "PARA PROPIETARIOS",
+                "owners.title": "Gestión patrimonial de prestigio",
+                "owners.full.title": "Gestión completa llave en mano",
+                "owners.full.copy": "Desde la multidifusión de anuncios hasta el mantenimiento técnico, nos ocupamos de todo para maximizar sus ingresos.",
+                "owners.full.button": "Saber más",
+                "owners.revenue.title": "Optimización de ingresos",
+                "owners.revenue.copy": "Algoritmos de tarificación dinámica para garantizar la mejor tasa de ocupación.",
+                "owners.maintenance.title": "Mantenimiento y limpieza",
+                "owners.maintenance.copy": "Protocolos de limpieza hoteleros e inspecciones regulares de su propiedad.",
+                "cta.title": "¿Listo para vivir la experiencia Heritage?",
+                "cta.contact": "Contactar con un asesor",
+                "cta.properties": "Ver nuestras propiedades",
+                "footer.description": "La referencia del alquiler vacacional premium en Burdeos. Autenticidad, lujo y servicio a medida.",
+                "footer.company": "EMPRESA",
+                "footer.localGuide": "Guía local",
+                "footer.sustainability": "Sostenibilidad",
+                "footer.legal": "LEGAL",
+                "footer.privacy": "Política de privacidad",
+                "footer.terms": "Condiciones de servicio",
+                "footer.copyright": "© 2024 Bordeaux Heritage Premium Rentals. Todos los derechos reservados."
+            }
+        };
+
+        const buttons = document.querySelectorAll("[data-lang]");
+        const translatableElements = document.querySelectorAll("[data-i18n]");
+
+        const readStoredLanguage = () => {
+            try {
+                return localStorage.getItem("preferredLanguage");
+            } catch (error) {
+                return null;
+            }
+        };
+
+        const storeLanguage = (language) => {
+            try {
+                localStorage.setItem("preferredLanguage", language);
+            } catch (error) {
+                return;
+            }
+        };
+
+        const applyLanguage = (language) => {
+            const dictionary = translations[language] || translations.fr;
+            const activeLanguage = translations[language] ? language : "fr";
+
+            document.documentElement.lang = activeLanguage;
+            document.title = dictionary["meta.title"];
+
+            translatableElements.forEach((element) => {
+                const translation = dictionary[element.dataset.i18n];
+                if (translation) element.textContent = translation;
+            });
+
+            buttons.forEach((button) => {
+                button.setAttribute("aria-pressed", String(button.dataset.lang === activeLanguage));
+            });
+
+            storeLanguage(activeLanguage);
+        };
+
+        const storedLanguage = readStoredLanguage();
+        const browserLanguage = (navigator.language || "fr").slice(0, 2).toLowerCase();
+        const initialLanguage = translations[storedLanguage] ? storedLanguage : (translations[browserLanguage] ? browserLanguage : "fr");
+
+        buttons.forEach((button) => {
+            button.addEventListener("click", () => applyLanguage(button.dataset.lang));
+        });
+
+        applyLanguage(initialLanguage);
+    })();
+</script>
+<script>
+    (() => {
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const animatedBlocks = document.querySelectorAll('main > section, footer');
+
+        if (reduceMotion || !('IntersectionObserver' in window)) {
+            animatedBlocks.forEach((block) => block.classList.add('is-visible'));
+            return;
+        }
+
+        let lastScrollY = window.scrollY;
+        let scrollDirection = 'down';
+
+        const updateScrollDirection = () => {
+            const currentScrollY = window.scrollY;
+            scrollDirection = currentScrollY < lastScrollY ? 'up' : 'down';
+            lastScrollY = currentScrollY;
+        };
+
+        window.addEventListener('scroll', updateScrollDirection, { passive: true });
+
+        animatedBlocks.forEach((block, index) => {
+            block.classList.add('scroll-animate');
+            block.dataset.scrollDirection = 'down';
+            if (index === 0) block.classList.add('is-visible');
+        });
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                const block = entry.target;
+
+                if (entry.isIntersecting) {
+                    block.dataset.scrollDirection = scrollDirection;
+                    block.classList.add('is-visible');
+                    return;
+                }
+
+                block.dataset.scrollDirection = entry.boundingClientRect.top < 0 ? 'up' : 'down';
+                block.classList.remove('is-visible');
+            });
+        }, {
+            threshold: 0.16,
+            rootMargin: '0px 0px -8% 0px'
+        });
+
+        animatedBlocks.forEach((block) => observer.observe(block));
+    })();
+</script>
 </body></html>
